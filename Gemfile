@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '~> 2.7.2'
+ruby '~> 3.1.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.1.6'
@@ -33,6 +33,10 @@ gem 'yaaf', '~> 0.1'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
+gem 'net-smtp', require: false
+gem 'net-imap', require: false
+gem 'net-pop', require: false
+
 group :development, :test do
   gem 'annotate', '~> 3.0', '>= 3.0.3'
   gem 'bullet', '~> 6.1'
@@ -46,7 +50,9 @@ end
 
 group :development do
   gem 'better_errors', '~> 2.5', '>= 2.5.1'
-  gem 'binding_of_caller', '~> 0.8.0'
+  # gem 'binding_of_caller' #, '~> 0.8.0'
+  gem 'debug_inspector', git: 'https://github.com/banister/debug_inspector.git'
+  gem 'binding_of_caller', git: 'https://github.com/walski/binding_of_caller.git', branch: 'ruby-3'
   gem 'brakeman', '~> 5.1'
   gem 'i18n-tasks', '~> 0.9.30'
   gem 'letter_opener', '~> 1.7'
